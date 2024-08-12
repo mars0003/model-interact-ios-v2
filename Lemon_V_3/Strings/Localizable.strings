@@ -1,0 +1,162 @@
+
+/*
+  MARK: - IMPORTANT
+  The strings for the quiz component of this application are NOT stored as string resources.
+  They are stored as string literals and are encapsulated within QuizMaster.
+  This app doesn't have the budget to be storing those strings as string resources.
+*/
+
+/*
+  MARK: - Params Usage
+  Strings that take in parameters should be marked with an "XParam" suffix.
+  Example: "car.description1Param" = "The car has %@ wheels";
+*/
+
+// MARK: - Commands
+
+"command.name" = "name";
+"command.information" = "information";
+"command.pause" = "pause";
+"command.stop" = "stop";
+"command.repeat" = "repeat";
+"command.faster" = "faster";
+"command.slower" = "slower";
+"command.complete" = "completed";
+"command.complete1" = "complete";
+"command.connect" = "connect to";
+"command.connect1" = "connected to";
+"command.addLabel" = "add label";
+"command.addLabel1" = "add level";
+"command.listenLabel" = "label";
+"command.listenLabel1" = "level";
+"command.test" = "test";
+"command.switchToTagmata"="switch to Tagmata";
+"command.switchToWaterCycle"="switch to Water Cycle";
+
+
+// MARK: - Names
+
+"tagma.head" = "Head";
+"tagma.thorax" = "Thorax";
+"tagma.leftWing" = "Left Wing";
+"tamga.rightWing" = "Right Wing";
+"tagma.abdomen" = "Abdomen";
+
+// MARK: - Descriptions
+
+"description.head" = "My head is where my main receptor parts are located. You will find my eyes, mouthparts constituting my mouth and biting parts (which also serve to guide food into my mouth), and a pair of antennae, which are sensory organs that allow me to smell, taste, and touch. Like many of my insect friends my head is the most powerful part of my body and is built from several connecting plates. My eyes are known as 'compound eyes' meaning that they are made up of several smaller eyes functioning in unison.";
+
+"description.thorax" = "The thorax, or my mid-section, holds my wings and is the central location of the more powerful muscles used in operating my wings and six legs. My feet-tips contain sticky pads which allow me to cling to various types of surfaces or to clasp onto prey.";
+
+"description.leftWing" = "My left wing comprises the forewing and hindwing. The forewing muscles generate the main power for the flight, whereas the hindwings, with their less powerful muscles generate less power.";
+
+"description.rightWing" = "My right wing comprises the forewing and hindwing. The forewing muscles generate the main power for the flight, whereas the hindwings, with their less powerful muscles generate less power.";
+
+"description.abdomen" = "My abdomen stores my digestive system and reproductive organs. My abdomen is a reactive part of my insect body, meaning that it can expand when I feed.";
+
+// MARK: - Connections
+
+"connection.head" = "My head connects to the top of my thorax.";
+"connection.thorax" = "My thorax is at my core and acts as the central point to which my head, wings and abdomen connect.";
+"connection.leftWing" = "My left wing connects to the left side of my thorax.";
+"connection.rightWing" = "My right wing connects to the right side of my thorax.";
+"connection.abdomen" = "My abdomen connects to the bottom of my thorax.";
+
+// MARK: - Completed
+
+"completion.success" = "Yes! The insect is complete.";
+"completion.failure" = "No, the insect is not complete.";
+"completion.wrongWings" = "Almost, but the wings need to be switched.";
+
+// MARK: - Tips
+
+"tip.twoHands" = "Try only holding one at a time.";
+
+// MARK: - Feedback
+
+"feedback.correct" = "Correct!";
+"feedback.tryAgain" = "Please try again.";
+
+// MARK: - Water cycle Names
+
+"watercycle.sun" = "The Sun";
+"watercycle.rain" = "Rain";
+"watercycle.infiltration" = "Infiltration";
+"watercycle.plant_uptake" = "Plant uptake";
+"watercycle.run_off" = "Run Off";
+"watercycle.snow" = "Snow";
+"watercycle.mountain" = "Mountain";
+"watercycle.precipitation" = "Precipitation";
+"watercycle.river" = "River";
+"watercycle.condensation" = "Condensation";
+"watercycle.ground_water" = "Groundwater";
+"watercycle.cloud" = "Cloud";
+"watercycle.ocean" = "Ocean";
+"watercycle.transpiration" = "Transpiration";
+"watercycle.evaporation" = "Evaporation";
+"watercycle.arrow" = "Arrow";
+
+
+// MARK: - Descriptions
+
+"description.sun" = "The Sun is the primary source of energy for the water cycle. It provides heat, which drives evaporation and influences weather patterns.";
+
+"description.rain" = "Rain occurs when water vapor in the atmosphere condenses into droplets heavy enough to fall to the ground. It is a key part of the water cycle, replenishing surface water sources such as lakes, rivers, and oceans.";
+
+"description.infiltration" = "Infiltration is the process by which water on the ground surface enters the soil. It replenishes groundwater and contributes to the water table.";
+
+"description.plant_uptake" = "Plant uptake refers to the process by which plants absorb water from the soil through their roots. This water is used for photosynthesis and other metabolic processes in the plant.";
+
+"description.run_off" = "Runoff occurs when water flows over the ground surface rather than infiltrating into the soil. It can carry pollutants and sediment, impacting water quality in rivers, lakes, and oceans.";
+
+"description.snow" = "Snow forms when water vapor in the atmosphere condenses directly into ice crystals. It accumulates on the ground and may melt into runoff during warmer temperatures, contributing to the water cycle.";
+
+"description.mountain" = "Mountains play a crucial role in the water cycle by capturing moisture from the atmosphere as precipitation. They also serve as reservoirs, storing water in glaciers and snowpacks that release water gradually over time.";
+
+"description.precipitation" = "Precipitation is any form of water, such as rain, snow, sleet, or hail, that falls from the atmosphere to the Earth's surface. It is a key process in the water cycle, replenishing freshwater sources.";
+
+"description.river" = "Rivers are channels of flowing water that transport water from higher elevations to lower elevations. They play a vital role in the water cycle, carrying runoff and sediment to oceans and other bodies of water.";
+
+"description.condensation" = "Condensation is the process by which water vapor in the atmosphere cools and changes into liquid water droplets. It forms clouds and contributes to precipitation in the water cycle.";
+
+"description.ground_water" = "Groundwater is water that resides beneath the Earth's surface in soil pores and rock fractures. It is a vital source of drinking water and supports ecosystems by sustaining streams, rivers, and wetlands.";
+
+"description.cloud" = "Clouds are visible masses of water droplets or ice crystals suspended in the atmosphere. They play a crucial role in the water cycle, storing and transporting water vapor across the globe.";
+
+"description.ocean" = "Oceans are large bodies of saltwater that cover about 71% of the Earth's surface. They play a central role in the water cycle, absorbing and releasing heat, and exchanging water vapor with the atmosphere.";
+
+"description.transpiration" = "Transpiration is the process by which moisture is released from plants into the atmosphere. It occurs through tiny openings in leaves called stomata and contributes to the water cycle by returning water vapor to the atmosphere.";
+
+"description.evaporation" = "Evaporation is the process by which water changes from a liquid to a gas (water vapor) at the surface of the Earth. It is a key component of the water cycle, transferring water from the Earth's surface to the atmosphere.";
+
+"description.arrow" = "Arrows represent the flow of water between different components of the water cycle. They illustrate how water moves through processes such as evaporation, condensation, precipitation, and runoff.";
+
+"description.snow_melt" = "Snow melt is the process by which snow and ice transform into liquid water due to rising temperatures. This melted water contributes to surface water sources and groundwater replenishment, playing a crucial role in the water cycle.";
+
+
+// MARK: - Connection watercycle
+"connection.sun" = "The sun connects to the top of evaporation.";
+"connection.rain" = "The rain connects to the processes of infiltration and runoff.";
+"connection.infiltration" = "Infiltration connects rain to the ground water.";
+"connection.plant_uptake" = "Plant uptake connects the ground water to plants.";
+"connection.run_off" = "Runoff connects rain to the river.";
+"connection.snow" = "The snow connects to the mountain and snow melt processes.";
+"connection.snow_melt" = "Snow melt connects snow to the river.";
+"connection.mountain" = "The mountain connects snow and runoff.";
+"connection.precipitation" = "Precipitation connects the cloud and the river.";
+"connection.river" = "The river connects the ocean and precipitation.";
+"connection.condensation" = "Condensation connects evaporation and the cloud.";
+"connection.ground_water" = "Ground water connects infiltration to the water table.";
+"connection.cloud" = "The cloud connects condensation and precipitation.";
+"connection.ocean" = "The ocean connects to the bottom of evaporation.";
+"connection.transpiration" = "Transpiration connects plant uptake to the atmosphere.";
+"connection.evaporation" = "Evaporation connects the sun and the ocean.";
+"connection.arrow" = "The arrow indicates the direction of each connection in the water cycle.";
+"connection.unidentified" = "The unidentified component does not have a specific connection.";
+
+// MARK: - Completed
+
+"completion.success" = "Yes! The watercycle is complete.";
+"completion.failure" = "No, the watercycle is not complete.";
+"completion.wrongWings" = "Almost, but the wings need to be switched.";
+
