@@ -18,10 +18,103 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cMX-Y7-oNt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117" y="14"/>
+            <point key="canvasLocation" x="2453" y="36"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="evX-0k-suc">
+            <objects>
+                <viewController id="PMb-T8-KNA" customClass="MainViewController" customModule="Lemon_V_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BKB-cN-N5l">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjg-iK-xXT">
+                                <rect key="frame" x="20" y="378" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Downloaded Models"/>
+                                <connections>
+                                    <action selector="ViewDownloadedModels:" destination="PMb-T8-KNA" eventType="touchUpInside" id="avb-NR-AVB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMo-Qb-h0V">
+                                <rect key="frame" x="20" y="303" width="353" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Available Models"/>
+                                <connections>
+                                    <action selector="ViewAvailableModels:" destination="PMb-T8-KNA" eventType="touchUpInside" id="JJB-zU-ygV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hEm-mA-4e6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hEm-mA-4e6" firstAttribute="trailing" secondItem="LMo-Qb-h0V" secondAttribute="trailing" constant="20" id="4KK-pD-EM4"/>
+                            <constraint firstItem="hjg-iK-xXT" firstAttribute="leading" secondItem="hEm-mA-4e6" secondAttribute="leading" constant="20" id="Bg7-mo-pUq"/>
+                            <constraint firstItem="hEm-mA-4e6" firstAttribute="trailing" secondItem="hjg-iK-xXT" secondAttribute="trailing" constant="20" id="Vl7-Ld-5dp"/>
+                            <constraint firstItem="LMo-Qb-h0V" firstAttribute="top" secondItem="hEm-mA-4e6" secondAttribute="top" constant="200" id="bSe-35-dOD"/>
+                            <constraint firstItem="LMo-Qb-h0V" firstAttribute="leading" secondItem="hEm-mA-4e6" secondAttribute="leading" constant="20" id="lqa-Qs-Ktc"/>
+                            <constraint firstItem="hjg-iK-xXT" firstAttribute="top" secondItem="LMo-Qb-h0V" secondAttribute="bottom" constant="40" id="wVp-to-MhD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VS7-t5-YP8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9X-C8-EoS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="159.54198473282443" y="50.70422535211268"/>
+        </scene>
+        <!--Downloaded Models View Controller-->
+        <scene sceneID="Jqi-Eu-szO">
+            <objects>
+                <viewController id="lwv-Fw-baK" customClass="DownloadedModelsViewController" customModule="Lemon_V_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="czz-B5-G2e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fAb-Fi-Cr8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aOj-qL-ArC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TW-iy-4bW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="435"/>
+        </scene>
+        <!--Available Models View Controller-->
+        <scene sceneID="BT9-cr-KM3">
+            <objects>
+                <viewController id="oAV-3q-gdH" customClass="AvailableModelsViewController" customModule="Lemon_V_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nzw-oU-tVQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8wW-fM-ic2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ocn-rn-JYV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hy2-g8-nxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241.9847328244275" y="-410.56338028169017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vbx-FR-ws6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SsA-R2-JSA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XrR-tD-Roi">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PMb-T8-KNA" kind="relationship" relationship="rootViewController" id="Ijz-XC-4Jd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2a9-Rm-G13" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-767.17557251908397" y="50.70422535211268"/>
         </scene>
     </scenes>
     <resources>

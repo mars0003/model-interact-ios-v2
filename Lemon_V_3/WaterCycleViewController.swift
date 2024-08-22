@@ -639,7 +639,8 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     func handleDetectionResults(_ results: ModelCompiledResults) {
         if self.isLive {
 
-            
+            print(self.loadedCommand)
+            print(results.heldModel.first)
             // Test command to make sure everything is working
             if self.loadedCommand == .test {
                 self.synthesizer.speak("Lemon")

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C71A0CD2C6CF7430096DF86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0CC2C6CF7430096DF86 /* MainViewController.swift */; };
+		4C71A0CF2C6CF83D0096DF86 /* AvailableModelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0CE2C6CF83D0096DF86 /* AvailableModelsViewController.swift */; };
+		4C71A0D12C6CF84A0096DF86 /* DownloadedModelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0D02C6CF84A0096DF86 /* DownloadedModelsViewController.swift */; };
+		4C71A0D32C6D852E0096DF86 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0D22C6D852E0096DF86 /* Model.swift */; };
+		4C71A0D52C6D8BB80096DF86 /* AvailableModelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0D42C6D8BB80096DF86 /* AvailableModelViewModel.swift */; };
+		4C71A0D72C6D8D890096DF86 /* DownloadedModelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0D62C6D8D890096DF86 /* DownloadedModelsViewModel.swift */; };
+		4C71A0D92C6D8F580096DF86 /* AvailableModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C71A0D82C6D8F580096DF86 /* AvailableModelCell.swift */; };
 		5608016F2C44E71D00537A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5608016E2C44E71D00537A19 /* AppDelegate.swift */; };
 		560801712C44E71D00537A19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801702C44E71D00537A19 /* SceneDelegate.swift */; };
 		560801762C44E71D00537A19 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 560801752C44E71D00537A19 /* Base */; };
@@ -132,6 +139,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C71A0CC2C6CF7430096DF86 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4C71A0CE2C6CF83D0096DF86 /* AvailableModelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableModelsViewController.swift; sourceTree = "<group>"; };
+		4C71A0D02C6CF84A0096DF86 /* DownloadedModelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedModelsViewController.swift; sourceTree = "<group>"; };
+		4C71A0D22C6D852E0096DF86 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4C71A0D42C6D8BB80096DF86 /* AvailableModelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableModelViewModel.swift; sourceTree = "<group>"; };
+		4C71A0D62C6D8D890096DF86 /* DownloadedModelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedModelsViewModel.swift; sourceTree = "<group>"; };
+		4C71A0D82C6D8F580096DF86 /* AvailableModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableModelCell.swift; sourceTree = "<group>"; };
 		5608016B2C44E71D00537A19 /* Lemon_V_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemon_V_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5608016E2C44E71D00537A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		560801702C44E71D00537A19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -382,6 +396,12 @@
 			children = (
 				560801AE2C44E9BD00537A19 /* Core */,
 				560801B42C44E9BD00537A19 /* Overlays */,
+				4C71A0CC2C6CF7430096DF86 /* MainViewController.swift */,
+				4C71A0CE2C6CF83D0096DF86 /* AvailableModelsViewController.swift */,
+				4C71A0D02C6CF84A0096DF86 /* DownloadedModelsViewController.swift */,
+				4C71A0D22C6D852E0096DF86 /* Model.swift */,
+				4C71A0D42C6D8BB80096DF86 /* AvailableModelViewModel.swift */,
+				4C71A0D62C6D8D890096DF86 /* DownloadedModelsViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -392,6 +412,7 @@
 				560801972C44E9BD00537A19 /* Assets */,
 				560801992C44E9BD00537A19 /* Environment */,
 				560801B52C44E9BD00537A19 /* Views */,
+				4C71A0D82C6D8F580096DF86 /* AvailableModelCell.swift */,
 			);
 			path = "View Layer";
 			sourceTree = "<group>";
@@ -765,6 +786,7 @@
 				5608026F2C44EA0500537A19 /* WaterCycleViewController.swift in Sources */,
 				5608029B2C44EA0500537A19 /* DetectsTagmata.swift in Sources */,
 				560802962C44EA0500537A19 /* AudioSessionManager.swift in Sources */,
+				4C71A0D52C6D8BB80096DF86 /* AvailableModelViewModel.swift in Sources */,
 				5608027B2C44EA0500537A19 /* WrapsToZero.swift in Sources */,
 				5608027C2C44EA0500537A19 /* AudioAction.swift in Sources */,
 				560801C62C44E9BD00537A19 /* LemonLabelledSlider.swift in Sources */,
@@ -775,6 +797,7 @@
 				560801C32C44E9BD00537A19 /* LemonHStack.swift in Sources */,
 				560802842C44EA0500537A19 /* HandChirality.swift in Sources */,
 				5608028B2C44EA0500537A19 /* JointPosition.swift in Sources */,
+				4C71A0D72C6D8D890096DF86 /* DownloadedModelsViewModel.swift in Sources */,
 				560802CC2C44EA0500537A19 /* SFSpeechRecognizer.swift in Sources */,
 				560801BE2C44E9BD00537A19 /* Environment.swift in Sources */,
 				560802972C44EA0500537A19 /* LiveSpeechToTextDelegate.swift in Sources */,
@@ -782,12 +805,15 @@
 				560802872C44EA0500537A19 /* HandDetectionDelegate.swift in Sources */,
 				560801C82C44E9BD00537A19 /* LemonSlider.swift in Sources */,
 				560802792C44EA0500537A19 /* watercycle.mlmodel in Sources */,
+				4C71A0CD2C6CF7430096DF86 /* MainViewController.swift in Sources */,
 				560802CB2C44EA0500537A19 /* CGRect.swift in Sources */,
 				560802CF2C44EA0500537A19 /* Float.swift in Sources */,
 				560802682C44EA0500537A19 /* DetectsWaterCycle.swift in Sources */,
 				560802CE2C44EA0500537A19 /* Double.swift in Sources */,
 				560802652C44EA0500537A19 /* TagmataDetector5_5000.mlmodel in Sources */,
 				5608026A2C44EA0500537A19 /* WaterCycleDetection .swift in Sources */,
+				4C71A0CF2C6CF83D0096DF86 /* AvailableModelsViewController.swift in Sources */,
+				4C71A0D92C6D8F580096DF86 /* AvailableModelCell.swift in Sources */,
 				560802732C44EA0500537A19 /* DetectsModel.swift in Sources */,
 				5608028C2C44EA0500537A19 /* AnswerStatus.swift in Sources */,
 				560801C52C44E9BD00537A19 /* LemonImage.swift in Sources */,
@@ -802,6 +828,7 @@
 				560802812C44EA0500537A19 /* DetectionCompiler.swift in Sources */,
 				5608029F2C44EA0500537A19 /* TagmataDetectionOutcome.swift in Sources */,
 				5608026B2C44EA0500537A19 /* WaterCycleDetectionDelegate.swift in Sources */,
+				4C71A0D12C6CF84A0096DF86 /* DownloadedModelsViewController.swift in Sources */,
 				560802C52C44EA0500537A19 /* QuizMasterProtocol.swift in Sources */,
 				560802642C44EA0500537A19 /* MyWaterCycle.mlmodel in Sources */,
 				560802C72C44EA0500537A19 /* Strings.swift in Sources */,
@@ -842,6 +869,7 @@
 				560801C72C44E9BD00537A19 /* LemonLabelledSwitch.swift in Sources */,
 				560801CB2C44E9BD00537A19 /* LemonUIView.swift in Sources */,
 				560802A32C44EA0500537A19 /* TagmataDetector4_6000.mlmodel in Sources */,
+				4C71A0D32C6D852E0096DF86 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,7 +1021,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Z6NTSXJB9;
+				DEVELOPMENT_TEAM = 25P4S87VXL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lemon_V_3/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -1009,7 +1037,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.Lemon-V-2";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ishrat.monash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1024,7 +1052,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4Z6NTSXJB9;
+				DEVELOPMENT_TEAM = 25P4S87VXL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lemon_V_3/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -1040,7 +1068,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.monash.Lemon-V-2";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ishrat.monash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
