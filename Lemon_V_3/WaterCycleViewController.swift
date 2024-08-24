@@ -11,6 +11,8 @@ import Vision
 
 class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetectionDelegate, ModelDetectionDeletegate, LiveSpeechToTextDelegate {
     
+    var modelURL: URL?
+    
     func onModelDetection(outcome: NewModelDetectionOutcome?) {
         if let outcome {
             if self.runModels {
@@ -28,6 +30,8 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     }
     
     
+    
+    
     /// Determines how frequently the model is ran on a frame (every nth frame)
     private var predictionInterval = 6
     /// The camera capture session for producing a camera output
@@ -37,9 +41,9 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     /// Speech recognizer for recognising speech
     private let recognizer = SpeechRecognizer()
     /// The model used for detecting tagmata within a frame
-    private var tagmataDetector: DetectsModel = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
+//    private var tagmataDetector: DetectsModel = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
     
-    private var waterCycleDetector: DetectsModel = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
+    var waterCycleDetector =  ModelQuadrantDetection(modelURL: modelURL)
     /// Compiles multiple detections into usable results
     private let detectionCompiler = ModelDetectionCompiler()
     /// The model used for detecting hands within a frame
@@ -294,9 +298,9 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
         self.detectorSwitch.switchView
             .setOnFlick({ isOn in
                 if isOn {
-                    self.waterCycleDetector = ModelDetector(mlModelFile: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
+                    self.waterCycleDetector = ModelDetector(mlModelFile: self.modelURL)
                 } else {
-                    self.waterCycleDetector = ModelDetector(mlModelFile: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
+                    self.waterCycleDetector = ModelDetector(mlModelFile: self.modelURL)
                 }
                 self.setupObjectDetection()
             })
