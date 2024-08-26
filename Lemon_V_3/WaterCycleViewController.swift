@@ -9,9 +9,10 @@ import UIKit
 import AVFoundation
 import Vision
 
-class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetectionDelegate, ModelDetectionDeletegate, LiveSpeechToTextDelegate {
+class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetectionDelegate, ModelDetectionDelegate, LiveSpeechToTextDelegate {
     
     var modelURL: URL!
+    var modelString = " "
     
     
     func onModelDetection(outcome: NewModelDetectionOutcome?) {
@@ -306,9 +307,9 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
         self.detectorSwitch.switchView
             .setOnFlick({ isOn in
                 if isOn {
-                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL,modelName: self.modelString)
                 } else {
-                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL,modelName: self.modelString)
                 }
                 self.setupObjectDetection()
             })
@@ -412,14 +413,14 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
             // Compile the model
             let compiledModelURL = try MLModel.compileModel(at: modelURL)
             
-            // Load the compiled model
+            // Extract the model name from the file URL
+            let modelName = modelURL.deletingPathExtension().lastPathComponent
             
-            self.waterCycleDetector = ModelQuadrantDetection(modelURL: compiledModelURL)
-            self.tagmataDetector = ModelQuadrantDetection(modelURL:compiledModelURL)
+            // Initialize the detectors with the model name
+            self.waterCycleDetector = ModelQuadrantDetection(modelURL: compiledModelURL, modelName: modelName)
+            self.tagmataDetector = ModelQuadrantDetection(modelURL: compiledModelURL, modelName: modelName)
             
-  
-            
-            print("Model successfully loaded and compiled")
+            print("Model successfully loaded and compiled. Model name: \(modelName)")
             
         } catch {
             print("Error setting up Core ML model: \(error)")
@@ -643,27 +644,27 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
             }
             
             for command in Command.allCases {
-                if  currentTranscription.contains(Command.switchToTagmata) {
-                    self.detectorSwitch.switchView.setState(isOn: true)
-                    self.synthesizer.speak("Switched to Tagmata")
-                    self.detectionCompiler.clearOutcomes()
-                    self.loadedCommand = command
-                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
-                    self.setupObjectDetection()
-                    self.recognizer.resetTranscript()
-                    return
-                }
-                if  currentTranscription.contains(Command.switchToWaterCycle) {
-                    self.detectorSwitch.switchView.setState(isOn: false)
-                    self.synthesizer.speak("Switched to WaterCycle")
-                    self.detectionCompiler.clearOutcomes()
-                    self.loadedCommand = command
-                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
-                    self.setupObjectDetection()
-                    self.recognizer.resetTranscript()
-                    return
-
-                }
+//                if  currentTranscription.contains(Command.switchToTagmata) {
+//                    self.detectorSwitch.switchView.setState(isOn: true)
+//                    self.synthesizer.speak("Switched to Tagmata")
+//                    self.detectionCompiler.clearOutcomes()
+//                    self.loadedCommand = command
+//                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
+//                    self.setupObjectDetection()
+//                    self.recognizer.resetTranscript()
+//                    return
+//                }
+//                if  currentTranscription.contains(Command.switchToWaterCycle) {
+//                    self.detectorSwitch.switchView.setState(isOn: false)
+//                    self.synthesizer.speak("Switched to WaterCycle")
+//                    self.detectionCompiler.clearOutcomes()
+//                    self.loadedCommand = command
+//                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
+//                    self.setupObjectDetection()
+//                    self.recognizer.resetTranscript()
+//                    return
+//
+//                }
                 if currentTranscription.contains(command) {
                     self.detectionCompiler.clearOutcomes()
                     self.loadedCommand = command

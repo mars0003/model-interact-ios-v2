@@ -8,9 +8,9 @@
 import Foundation
 import CoreGraphics
 
-class ModelQuadrantDetection: DetectsModel, ModelDetectionDeletegate {
+class ModelQuadrantDetection: DetectsModel, ModelDetectionDelegate {
     
-    var objectDetectionDelegate: ModelDetectionDeletegate?
+    var objectDetectionDelegate: ModelDetectionDelegate?
     
     func onModelDetection(outcome: NewModelDetectionOutcome?) {
         guard let outcome = outcome else {
@@ -31,14 +31,12 @@ class ModelQuadrantDetection: DetectsModel, ModelDetectionDeletegate {
         } else {
             fatalError("Outcome was received from an unknown detector")
         }
-        
     }
     
     private static let QUARTILE_PROPORTION = 0.6
     
     public let id = DetectorID()
     private let modelDetectorFull: ModelDetector
-    // Below follow the cartesian plane quadrants
     private let modelDetectorQ1: ModelDetector // Top-right
     private let modelDetectorQ2: ModelDetector // Top-left
     private let modelDetectorQ3: ModelDetector // Bottom-left
@@ -46,7 +44,6 @@ class ModelQuadrantDetection: DetectsModel, ModelDetectionDeletegate {
     private lazy var allDetectors: [ModelDetector] = {
         return [self.modelDetectorFull, self.modelDetectorQ1, self.modelDetectorQ2, self.modelDetectorQ3, self.modelDetectorQ4]
     }()
-    // Represent detector completions
     private var quadrantProcessingCompletions = 0 {
         didSet {
             if self.quadrantProcessingCompletions >= self.allDetectors.count, let outcome = self.outcome {
@@ -58,12 +55,13 @@ class ModelQuadrantDetection: DetectsModel, ModelDetectionDeletegate {
     }
     private var outcome: NewModelDetectionOutcome? = nil
     
-    init(modelURL: URL) {
-        self.modelDetectorFull = ModelDetector(mlModelFile: modelURL)
-        self.modelDetectorQ1 = ModelDetector(mlModelFile: modelURL)
-        self.modelDetectorQ2 = ModelDetector(mlModelFile: modelURL)
-        self.modelDetectorQ3 = ModelDetector(mlModelFile: modelURL)
-        self.modelDetectorQ4 = ModelDetector(mlModelFile: modelURL)
+    // Updated init to take modelFile and modelName
+    init(modelURL: URL, modelName: String) {
+        self.modelDetectorFull = ModelDetector(mlModelFile: modelURL, modelName: modelName)
+        self.modelDetectorQ1 = ModelDetector(mlModelFile: modelURL, modelName: modelName)
+        self.modelDetectorQ2 = ModelDetector(mlModelFile: modelURL, modelName: modelName)
+        self.modelDetectorQ3 = ModelDetector(mlModelFile: modelURL, modelName: modelName)
+        self.modelDetectorQ4 = ModelDetector(mlModelFile: modelURL, modelName: modelName)
         
         self.allDetectors.forEach({ $0.objectDetectionDelegate = self })
     }
@@ -148,5 +146,4 @@ class ModelQuadrantDetection: DetectsModel, ModelDetectionDeletegate {
         }
         self.quadrantProcessingCompletions += 1
     }
-    
 }

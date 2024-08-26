@@ -45,8 +45,6 @@
 		560801D12C44E9BD00537A19 /* JointPositionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801B12C44E9BD00537A19 /* JointPositionsView.swift */; };
 		560801D22C44E9BD00537A19 /* PredictionBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801B22C44E9BD00537A19 /* PredictionBoxView.swift */; };
 		560801D32C44E9BD00537A19 /* ProximityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801B32C44E9BD00537A19 /* ProximityView.swift */; };
-		560802642C44EA0500537A19 /* MyWaterCycle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 560801D42C44E9FE00537A19 /* MyWaterCycle.mlmodel */; };
-		560802652C44EA0500537A19 /* TagmataDetector5_5000.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 560801D52C44E9FF00537A19 /* TagmataDetector5_5000.mlmodel */; };
 		560802682C44EA0500537A19 /* DetectsWaterCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801D92C44E9FF00537A19 /* DetectsWaterCycle.swift */; };
 		560802692C44EA0500537A19 /* WaterCycleClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801DA2C44E9FF00537A19 /* WaterCycleClassification.swift */; };
 		5608026A2C44EA0500537A19 /* WaterCycleDetection .swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801DB2C44E9FF00537A19 /* WaterCycleDetection .swift */; };
@@ -59,7 +57,6 @@
 		560802752C44EA0500537A19 /* ModelDetectionDeletegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801E82C44E9FF00537A19 /* ModelDetectionDeletegate.swift */; };
 		560802772C44EA0500537A19 /* ModelDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801EA2C44E9FF00537A19 /* ModelDetector.swift */; };
 		560802782C44EA0500537A19 /* ModelQuadrantDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801EB2C44E9FF00537A19 /* ModelQuadrantDetection.swift */; };
-		560802792C44EA0500537A19 /* watercycle.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 560801ED2C44EA0100537A19 /* watercycle.mlmodel */; };
 		5608027A2C44EA0500537A19 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801EE2C44EA0100537A19 /* Angle.swift */; };
 		5608027B2C44EA0500537A19 /* WrapsToZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801EF2C44EA0100537A19 /* WrapsToZero.swift */; };
 		5608027C2C44EA0500537A19 /* AudioAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560801F12C44EA0400537A19 /* AudioAction.swift */; };
@@ -178,8 +175,6 @@
 		560801B12C44E9BD00537A19 /* JointPositionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointPositionsView.swift; sourceTree = "<group>"; };
 		560801B22C44E9BD00537A19 /* PredictionBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionBoxView.swift; sourceTree = "<group>"; };
 		560801B32C44E9BD00537A19 /* ProximityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProximityView.swift; sourceTree = "<group>"; };
-		560801D42C44E9FE00537A19 /* MyWaterCycle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyWaterCycle.mlmodel; sourceTree = "<group>"; };
-		560801D52C44E9FF00537A19 /* TagmataDetector5_5000.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TagmataDetector5_5000.mlmodel; sourceTree = "<group>"; };
 		560801D92C44E9FF00537A19 /* DetectsWaterCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetectsWaterCycle.swift; sourceTree = "<group>"; };
 		560801DA2C44E9FF00537A19 /* WaterCycleClassification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterCycleClassification.swift; sourceTree = "<group>"; };
 		560801DB2C44E9FF00537A19 /* WaterCycleDetection .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WaterCycleDetection .swift"; sourceTree = "<group>"; };
@@ -192,7 +187,6 @@
 		560801E82C44E9FF00537A19 /* ModelDetectionDeletegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDetectionDeletegate.swift; sourceTree = "<group>"; };
 		560801EA2C44E9FF00537A19 /* ModelDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDetector.swift; sourceTree = "<group>"; };
 		560801EB2C44E9FF00537A19 /* ModelQuadrantDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelQuadrantDetection.swift; sourceTree = "<group>"; };
-		560801ED2C44EA0100537A19 /* watercycle.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = watercycle.mlmodel; sourceTree = "<group>"; };
 		560801EE2C44EA0100537A19 /* Angle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		560801EF2C44EA0100537A19 /* WrapsToZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrapsToZero.swift; sourceTree = "<group>"; };
 		560801F12C44EA0400537A19 /* AudioAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioAction.swift; sourceTree = "<group>"; };
@@ -310,12 +304,9 @@
 				56DD39952C4F9FFB00A00894 /* Firebase test */,
 				560801F02C44EA0100537A19 /* Core */,
 				560802532C44EA0400537A19 /* Model Layer */,
-				560801D42C44E9FE00537A19 /* MyWaterCycle.mlmodel */,
 				560802562C44EA0500537A19 /* Strings */,
 				560802632C44EA0500537A19 /* Swift */,
-				560801D52C44E9FF00537A19 /* TagmataDetector5_5000.mlmodel */,
 				560801E02C44E9FF00537A19 /* Water Cycle Detection  */,
-				560801ED2C44EA0100537A19 /* watercycle.mlmodel */,
 				560801E12C44E9FF00537A19 /* WaterCycleViewController.swift */,
 				560801B62C44E9BD00537A19 /* View Layer */,
 				5608016E2C44E71D00537A19 /* AppDelegate.swift */,
@@ -804,13 +795,11 @@
 				5608027F2C44EA0500537A19 /* Command.swift in Sources */,
 				560802872C44EA0500537A19 /* HandDetectionDelegate.swift in Sources */,
 				560801C82C44E9BD00537A19 /* LemonSlider.swift in Sources */,
-				560802792C44EA0500537A19 /* watercycle.mlmodel in Sources */,
 				4C71A0CD2C6CF7430096DF86 /* MainViewController.swift in Sources */,
 				560802CB2C44EA0500537A19 /* CGRect.swift in Sources */,
 				560802CF2C44EA0500537A19 /* Float.swift in Sources */,
 				560802682C44EA0500537A19 /* DetectsWaterCycle.swift in Sources */,
 				560802CE2C44EA0500537A19 /* Double.swift in Sources */,
-				560802652C44EA0500537A19 /* TagmataDetector5_5000.mlmodel in Sources */,
 				5608026A2C44EA0500537A19 /* WaterCycleDetection .swift in Sources */,
 				4C71A0CF2C6CF83D0096DF86 /* AvailableModelsViewController.swift in Sources */,
 				4C71A0D92C6D8F580096DF86 /* AvailableModelCell.swift in Sources */,
@@ -830,7 +819,6 @@
 				5608026B2C44EA0500537A19 /* WaterCycleDetectionDelegate.swift in Sources */,
 				4C71A0D12C6CF84A0096DF86 /* DownloadedModelsViewController.swift in Sources */,
 				560802C52C44EA0500537A19 /* QuizMasterProtocol.swift in Sources */,
-				560802642C44EA0500537A19 /* MyWaterCycle.mlmodel in Sources */,
 				560802C72C44EA0500537A19 /* Strings.swift in Sources */,
 				560801C22C44E9BD00537A19 /* LemonButton.swift in Sources */,
 				56DD39AF2C4FB75600A00894 /* ModelClassification.swift in Sources */,

@@ -1,0 +1,13 @@
+{
+  "MLModelVersionStringKey" : "--",
+  "MLModelDescriptionKey" : "--",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.version" : "13.4.0",
+    "com.apple.createml.app.tag" : "99.4",
+    "com.apple.coreml.model.preview.type" : "objectDetector",
+    "iterations" : "5000",
+    "com.apple.createml.app.version" : "4.0"
+  },
+  "MLModelAuthorKey" : "Andre Pham",
+  "MLModelLicenseKey" : "--"
+}

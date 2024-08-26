@@ -10,7 +10,7 @@
 import Foundation
 import Vision
 
-protocol ModelDetectionDeletegate: AnyObject {
+protocol ModelDetectionDelegate: AnyObject {
     
     func onModelDetection(outcome: NewModelDetectionOutcome?)
     

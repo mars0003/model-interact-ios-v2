@@ -11,7 +11,7 @@ import CoreGraphics
 protocol DetectsModel {
     
     var id: DetectorID { get }
-    var objectDetectionDelegate: ModelDetectionDeletegate? { get set }
+    var objectDetectionDelegate: ModelDetectionDelegate? { get set }
     
     func makePrediction(on frame: CGImage)
     

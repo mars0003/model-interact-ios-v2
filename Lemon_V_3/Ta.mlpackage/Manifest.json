@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "0225124F-2EFE-4DF0-8E2F-741A9C48D4BC": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "511E6801-8047-42DF-B0DF-DDB1B160D1F7": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "TagmataDetector5_5000.mlmodel",
+            "path": "com.apple.CoreML/TagmataDetector5_5000.mlmodel"
+        },
+        "BDF206CC-E275-4548-BAD0-4D429E2F3D89": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "511E6801-8047-42DF-B0DF-DDB1B160D1F7"
+}

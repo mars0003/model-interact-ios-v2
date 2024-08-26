@@ -32,7 +32,6 @@ class NewModelDetection {
         }
         
         guard let classification = foundClassification else {
-            print(detectedLabel)
             fatalError("Classification found has no corresponding part in the parts array")
         }
         

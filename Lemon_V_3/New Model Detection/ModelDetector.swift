@@ -15,13 +15,14 @@ class ModelDetector: DetectsModel {
     public let id = DetectorID()
     private var visionModel: VNCoreMLModel? = nil
     private var request: VNCoreMLRequest? = nil
-    var objectDetectionDelegate: ModelDetectionDeletegate?
+    var objectDetectionDelegate: ModelDetectionDelegate?
     private var activeThreads = 0
     private let firebaseManager = FirebaseManager.shared // Use the shared instance
 
-    init(mlModelFile: URL) {
+    // Updated init to take modelFile and modelName
+    init(mlModelFile: URL, modelName: String) {
         self.setupModel(from: mlModelFile)
-        firebaseManager.modelName = "WaterCycle"
+        firebaseManager.modelName = modelName
     }
     
     func makePrediction(on frame: CGImage) {
