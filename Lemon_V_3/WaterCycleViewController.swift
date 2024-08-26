@@ -11,7 +11,8 @@ import Vision
 
 class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetectionDelegate, ModelDetectionDeletegate, LiveSpeechToTextDelegate {
     
-    var modelURL: URL?
+    var modelURL: URL!
+    
     
     func onModelDetection(outcome: NewModelDetectionOutcome?) {
         if let outcome {
@@ -43,7 +44,11 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     /// The model used for detecting tagmata within a frame
 //    private var tagmataDetector: DetectsModel = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
     
-    var waterCycleDetector =  ModelQuadrantDetection(modelURL: modelURL)
+
+    
+    var waterCycleDetector: ModelQuadrantDetection?
+    var tagmataDetector: ModelQuadrantDetection?
+
     /// Compiles multiple detections into usable results
     private let detectionCompiler = ModelDetectionCompiler()
     /// The model used for detecting hands within a frame
@@ -128,6 +133,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
         #else
             self.startLiveSession()
         #endif
+        self.setUpCoreMLFile()
         self.setupObjectDetection()
         self.setupHandDetection()
         self.setupSpeechRecognition()
@@ -135,6 +141,8 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
         self.setupAndBeginCapturingVideoFrames()
         // Stop the device automatically sleeping
         UIApplication.shared.isIdleTimerDisabled = true
+        
+     
     }
     
     func startLiveSession() {
@@ -298,9 +306,9 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
         self.detectorSwitch.switchView
             .setOnFlick({ isOn in
                 if isOn {
-                    self.waterCycleDetector = ModelDetector(mlModelFile: self.modelURL)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL)
                 } else {
-                    self.waterCycleDetector = ModelDetector(mlModelFile: self.modelURL)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: self.modelURL)
                 }
                 self.setupObjectDetection()
             })
@@ -392,6 +400,32 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
             })
     }
     
+    
+    
+    func setUpCoreMLFile() {
+        guard let modelURL = self.modelURL else {
+            print("Model URL is not set")
+            return
+        }
+        
+        do {
+            // Compile the model
+            let compiledModelURL = try MLModel.compileModel(at: modelURL)
+            
+            // Load the compiled model
+            
+            self.waterCycleDetector = ModelQuadrantDetection(modelURL: compiledModelURL)
+            self.tagmataDetector = ModelQuadrantDetection(modelURL:compiledModelURL)
+            
+  
+            
+            print("Model successfully loaded and compiled")
+            
+        } catch {
+            print("Error setting up Core ML model: \(error)")
+        }
+    }
+    
     func clearOverlays() {
         self.overlays.forEach({ $0.clearSubviewsAndLayers() })
     }
@@ -445,8 +479,8 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     }
     
     private func setupObjectDetection() {
-        self.waterCycleDetector.objectDetectionDelegate = self
-        self.tagmataDetector.objectDetectionDelegate = self
+        self.waterCycleDetector?.objectDetectionDelegate = self
+        self.tagmataDetector?.objectDetectionDelegate = self
 
         
     }
@@ -535,7 +569,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
             if self.runModels {
                 self.handDetector.makePrediction(on: frame)
                 if self.currentFrameID%self.predictionInterval == 0 {
-                    self.waterCycleDetector.makePrediction(on: frame)
+                    self.waterCycleDetector!.makePrediction(on: frame)
                 }
             }
             
@@ -614,7 +648,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
                     self.synthesizer.speak("Switched to Tagmata")
                     self.detectionCompiler.clearOutcomes()
                     self.loadedCommand = command
-                    self.waterCycleDetector = ModelDetector(mlModelFile: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "TagmataDetector5_5000", withExtension: "mlmodelc")!)
                     self.setupObjectDetection()
                     self.recognizer.resetTranscript()
                     return
@@ -624,7 +658,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
                     self.synthesizer.speak("Switched to WaterCycle")
                     self.detectionCompiler.clearOutcomes()
                     self.loadedCommand = command
-                    self.waterCycleDetector = ModelDetector(mlModelFile: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
+                    self.waterCycleDetector = ModelQuadrantDetection(modelURL: Bundle.main.url(forResource: "watercycle", withExtension: "mlmodelc")!)
                     self.setupObjectDetection()
                     self.recognizer.resetTranscript()
                     return
