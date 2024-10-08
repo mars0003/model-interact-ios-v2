@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Firebase
 
 class QuizMasterWaterCycle {
     
@@ -20,12 +20,7 @@ class QuizMasterWaterCycle {
     private(set) var readyForVisualAnswer = false
     /// If the quiz master has received a question, but has not yet been flagged as ready for an answer
     private(set) var questionReceived = false
-    private var loadedQuestion: QuestionWaterCycle {
-        return self.questions[self.questionIndex]
-    }
-    public var loadedQuestionText: String {
-        return self.questions[self.questionIndex].questionText
-    }
+    
     public var activationPhrases: [String] {
         return ["quiz me", "chris me", "because me", "christening"]
     }
@@ -33,62 +28,43 @@ class QuizMasterWaterCycle {
         return ["quiz", "chris"]
     }
     
-    init() {
-        self.questions = [
-            AudioQuestionWaterCycle(
-                questionText: "What is the primary source of energy for the water cycle?",
-                answers: [["The Sun"], ["sun"], ["Son"]]
-            ),
-//            VisualQuestionWaterCycle(
-//                questionText: "Identify the process where water from the surface seeps into the ground.",
-//                answers: [.infiltration]
-//            ),
-            AudioQuestionWaterCycle(
-                questionText: "What term describes the process where water enters the soil?",
-                answers: [["Infiltration"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What term is used for water flowing over the ground surface?",
-                answers: [["Runoff"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What geographical features capture moisture and store water in the water cycle?",
-                answers: [["Mountains"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What process involves plants releasing moisture into the atmosphere?",
-                answers: [["Transpiration"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What process in the water cycle results in the formation of clouds?",
-                answers: [["Condensation"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "Which large body of saltwater plays a central role in the water cycle?",
-                answers: [["Ocean"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What do arrows represent in water cycle diagrams?",
-                answers: [["Flow"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What forms directly from water vapor under freezing conditions in the atmosphere?",
-                answers: [["Snow"]]
-            ),
-            AudioQuestionWaterCycle(
-                questionText: "What is the term for any form of water that falls from clouds to the ground?",
-                answers: [["Precipitation"]]
-            ),
-//            VisualQuestionWaterCycle(
-//                questionText: "Identify the process where water changes from a liquid to a gas in the water cycle.",
-//                answers: [.evaporation]
-//            )
-            
-//            VisualQuestion(
-//                questionText: "Can you identify my left wing?",
-//                answers: [.leftWing]
-//            )
-        ]
+    private var loadedQuestion: QuestionWaterCycle {
+        return self.questions[self.questionIndex]
+    }
+    public var loadedQuestionText: String {
+        return self.questions[self.questionIndex].questionText
+    }
+        
+        init(modelID: String) {
+            fetchQuestions(forModel: modelID)
+        }
+    
+    // Fetch questions from Firestore based on the selected model
+    func fetchQuestions(forModel modelID: String) {
+        let db = Firestore.firestore()
+        db.collection("Models").document(modelID).collection("Quiz").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching questions: \(error)")
+                return
+            }
+            self.questions = querySnapshot?.documents.compactMap { document -> QuestionWaterCycle? in
+                let data = document.data()
+                guard let questionText = data["questionText"] as? String,
+                      let answerType = data["answerType"] as? String else {
+                    return nil
+                }
+                
+                if answerType == "audio" {
+                    let answers = data["answers"] as? [[String]] ?? []
+                    return AudioQuestionWaterCycle(questionText: questionText, answers: answers)
+                } else if answerType == "visual" {
+                    let answers = data["answers"] as? [ModelClassification] ?? []
+                    return VisualQuestionWaterCycle(questionText: questionText, answers: answers)
+                } else {
+                    return nil
+                }
+            } ?? []
+        }
     }
     
     func isActivatedBy(speech: SpeechText, useShorthand: Bool = false) -> Bool {
@@ -106,10 +82,9 @@ class QuizMasterWaterCycle {
     }
     
     func loadNextQuestion() {
-        // Reset ready-for answers (just in case)
-        self.readyForAudioAnswer = false
-        self.readyForVisualAnswer = false
-        self.questionIndex = (questionIndex + 1)%self.questions.count
+        readyForAudioAnswer = false
+        readyForVisualAnswer = false
+        questionIndex = (questionIndex + 1) % questions.count
     }
     
     func loadCurrentQuestion() {
@@ -119,11 +94,11 @@ class QuizMasterWaterCycle {
     }
     
     func markReadyForAnswer() {
-        switch self.loadedQuestion.answerType {
+        switch loadedQuestion.answerType {
         case .audio:
-            self.readyForAudioAnswer = true
+            readyForAudioAnswer = true
         case .visual:
-            self.readyForVisualAnswer = true
+            readyForVisualAnswer = true
         }
     }
     

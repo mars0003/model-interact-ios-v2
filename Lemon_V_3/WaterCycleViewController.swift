@@ -13,6 +13,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     
     var modelURL: URL!
     var modelString = " "
+    var modelID: String?
     
     
     func onModelDetection(outcome: NewModelDetectionOutcome?) {
@@ -73,7 +74,7 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     /// The audio action to trigger when the synthesis finishes speaking
     private var synthesisDidFinishAudioAction: AudioAction = .none
     /// The manager for controlling the quiz component of the application
-    private let quizMaster = QuizMasterWaterCycle()
+    private lazy var quizMaster = QuizMasterWaterCycle(modelID: modelID ?? "")
     /// The last time a visual check for a quiz answer was made (so the tts doesn't spam an "incorrect" response)
     private var lastVisualAnswerCheck = DispatchTime.now()
     /// True if the models should be continuously running at this moment
@@ -129,6 +130,9 @@ class WaterCycleViewController: UIViewController, CaptureDelegate, HandDetection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Testing
+        print("Model URL: \(modelURL)")
+        print("Model ID: \(modelID)")
         #if DEBUG
             self.setupSubviews()
         #else

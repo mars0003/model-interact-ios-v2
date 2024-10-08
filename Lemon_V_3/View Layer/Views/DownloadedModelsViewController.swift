@@ -46,21 +46,17 @@ class DownloadedModelsViewController: UIViewController, UITableViewDelegate, UIT
         return cell
     }
     
-    // UITableViewDelegate methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let modelURL = viewModel.downloadedModels[indexPath.row]
-        
-        print(modelURL)
-        
-        // Initialize WaterCycleViewController with necessary parameters
-        let waterCycleVC = WaterCycleViewController()
-         waterCycleVC.modelURL = modelURL
 
+        // Extract the modelID from the file name or URL
+        let modelID = modelURL.deletingPathExtension().lastPathComponent
+
+        let waterCycleVC = WaterCycleViewController()
+        waterCycleVC.modelURL = modelURL
+        waterCycleVC.modelID = modelID 
         
-        // Pass any required data or model information to WaterCycleViewController
-        // If WaterCycleViewController needs the modelURL or any other data, you can pass it here.
-        // For example:
-        
+        // Navigate to WaterCycleViewController
         navigationController?.pushViewController(waterCycleVC, animated: true)
     }
     
